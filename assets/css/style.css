@@ -1,0 +1,135 @@
+/* General styles */
+body {
+  margin: 0;
+  background-color: #0c0501;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Background styles */
+.background-div {
+  background-image: url(https://media.discordapp.net/attachments/1064936226576142336/1082118058002354186/AVANT_AVANT_AVANT_DERNIER_2.png?width=1609&height=905);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 110vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center {
+  text-align: center;
+}
+
+
+
+/* Main content styles */
+.second-div {
+  background-color: #0c0501;
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 5vmin 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.parent {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.child {
+  background: #10101025;
+  padding: 2em;
+  border-radius: 10px;
+}
+
+/* Text styles */
+.center2 {
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+/* Image placeholder styles */
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player {
+  max-width: 50%;
+  background-color: rgba(28, 28, 28, 0.236);
+
+}
+
+/* Text container styles */
+.text-container {
+  width: 60%;
+  padding: 2em;
+}
+
+/* Footer styles */
+.third-page {
+  background-image: url(https://media.discordapp.net/attachments/1064936226576142336/1082121518198304908/AVANT_AVANT_AVANT_DERNIER_4.png?width=1527&height=859);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center3 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 20px;
+  bottom: 10px;
+}
+
+.logo-container a {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+.logo-container a img {
+  width: 30px;
+  height: 30px;
+  filter: grayscale(100%) invert(100%) brightness(1000%);
+  transition: all 0.3s ease-in-out;
+}
+
+.logo-container a:hover img {
+  transform: scale(1.1);
+  filter: invert(100%) drop-shadow(0 0 5px white);
+}
+
+.titling {
+  font-family: rose_knightregular;
+  font-size: 90px;
+}
+
+@font-face {
+    font-family: 'rose_knightregular';
+    src: url('rose_knight-webfont.woff2') format('woff2'),
+         url('rose_knight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
