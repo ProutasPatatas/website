@@ -20,6 +20,65 @@ body {
   justify-content: center;
 }
 
+/* Add this CSS code */
+.pdf-reader-container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 2em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.titling.inverted-colors {
+  color: #fff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.background-div.alternative-bg {
+  background-image: url('./secondbg.png');
+}
+
+.navbar.navbar-white {
+  background-color: rgb(254, 254, 255);
+}
+
+.navbar.navbar-white li a {
+  color: #ffffff;
+}
+
+.navbar.navbar-white li a .icon {
+  filter: none;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.titling.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+.navbar.navbar-white li a:hover {
+  color: #0c0501;
+  background-color: rgba(12, 5, 1, 0.2);
+}
+
+.navbar.navbar-white li a:hover .icon {
+  filter: drop-shadow(0 0 5px white);
+}
+
+
+
 .center {
   text-align: center;
 }
@@ -76,9 +135,10 @@ body {
 
 /* Footer styles */
 .third-page {
-  background-image: url(https://media.discordapp.net/attachments/1064936226576142336/1082121518198304908/AVANT_AVANT_AVANT_DERNIER_4.png?width=1527&height=859);
+  background-image: url(https://media.discordapp.net/attachments/1079828773450555522/1097654928584998912/background2_21.png?width=1609&height=905);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed; /* Add this line for parallax effect */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -124,7 +184,23 @@ body {
 .titling {
   font-family: rose_knightregular;
   font-size: 90px;
+  color: #000; /* Set the text color to black */
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; /* Add white outline */
+  animation: fadeInDown 1.5s ease-out 0s forwards; /* Add an appear animation */
 }
+
+/* Add keyframe animation for the title */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 @font-face {
     font-family: 'rose_knightregular';
@@ -132,4 +208,121 @@ body {
          url('rose_knight-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+/* Navbar styles */
+.navbar {
+  list-style: none;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(12, 5, 1, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition: transform 0.8s ease-in-out;
+}
+
+
+.navbar li {
+  display: inline-block;
+  margin: 0 1.5em; /* Increase margin from 1em to 1.5em */
+}
+
+.navbar li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.navbar li a .icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  vertical-align: middle;
+  filter: grayscale(100%) invert(100%) brightness(1000%);
+}
+
+.navbar li a:hover .icon {
+  filter: invert(100%) drop-shadow(0 0 5px white);
+}
+
+.navbar li a:hover {
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2em;
+}
+
+/* Team page styles */
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2em;
+}
+
+.team-member {
+  max-width: 25em; /* Increase the max-width */
+  margin: 1em;
+  padding: 2em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.team-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1em;
+}
+
+.team-name {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.team-role {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.team-description {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* Add the .visible class for the animation */
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

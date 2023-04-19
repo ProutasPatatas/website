@@ -3,9 +3,19 @@
   <head>
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Deplorable Odyssey - A Journey to Save the Planet</title>
+	<link rel="icon" href="./ico.ico">
   </head>
-  <body>
-    
+  
+
+<body>
+<nav id="navbar">
+  <ul class="navbar" id="navbar2">
+    <li><a href="#">Menu</a></li>
+    <li><a href="./team.html">Team</a></li>
+    <li><a href="#"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/724/724933.png" alt="Download icon"> Download</a></li>
+    <li><a href="#" id="toggleTheme"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/91/91466.png" alt="Moon icon"></a></li>
+  </ul>
+</nav>
 <div class="background-div">
   <h1 class="center titling">Deplorable Odyssey</h1>
   <div class="logo-container">
@@ -29,7 +39,7 @@
         <img class="player" src="https://media.discordapp.net/attachments/1079828773450555522/1080558803772260423/New_Piskel_12.gif?width=859&height=859" alt="Image Placeholder">
       </div>
       <div class="text-container">
-        <p class="center2">In this 2D platformer game, you will be tasked with fighting off various mobs to ultimately save a precious princess. Show off your fighting skills and overcome all obstacles in your path. Do you have what it takes to be a hero and save the day? Play now and find out!</p>
+        <p class="center2">In this 2D platformer game, you'll be tasked with fighting off various mobs to ultimately save a precious princess. Show off your fighting skills and overcome all obstacles in your path. Do you have what it takes to be a hero and save the day? Play now and find out!</p>
       </div>
     </div>
 	
@@ -48,6 +58,72 @@ In this 2D platformer game, you'll be tasked with fighting off various mobs to u
     <div class="third-page">
       <h2 class="center3">Explore the World of Deplorable Odyssey</h2>
     </div>
+
+
+<script>
+
+let lastScrollTop = 0;
+
+function updateNavbar() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const navbar = document.getElementById('navbar');
+
+  if (scrollTop > lastScrollTop) {
+    navbar.classList.add('navbar-hidden');
+  } else {
+    navbar.classList.remove('navbar-hidden');
+  }
+  lastScrollTop = scrollTop;
+}
+
+let ticking = false;
+
+function onScroll() {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      updateNavbar();
+      ticking = false;
+    });
+    ticking = true;
+  }
+}
+
+window.addEventListener('scroll', onScroll);
+
+</script>
+
+<script>
+  const toggleThemeBtn = document.getElementById('toggleTheme');
+  const titling = document.querySelector('.titling');
+  const backgroundDiv = document.querySelector('.background-div');
+  const themeIcon = document.querySelector('#toggleTheme img');
+  
+  const navbar = document.getElementById('navbar2');
+  const moonIcon = 'https://cdn-icons-png.flaticon.com/512/91/91466.png';
+  const sunIcon = 'https://www.iconpacks.net/icons/2/free-sun-icon-3337-thumb.png';
+
+
+  toggleThemeBtn.addEventListener('click', () => {
+    titling.classList.toggle('inverted-colors');
+    backgroundDiv.classList.toggle('alternative-bg');
+	    if (themeIcon.src === moonIcon) {
+      themeIcon.src = sunIcon;
+    } else {
+      themeIcon.src = moonIcon;
+    }
+  });
+</script>
+
+<script>
+
+  // Calculate the duration of the first animation
+  const firstAnimationDuration = parseFloat(getComputedStyle(titling).animationDuration) * 1000;
+
+  // Add the 'floating' class after the first animation has finished
+  setTimeout(() => {
+    titling.classList.add('floating');
+  }, firstAnimationDuration);
+</script>
 
   </body>
 </html>
