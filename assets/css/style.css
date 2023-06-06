@@ -9,6 +9,186 @@ body {
   font-display: swap;
 }
 
+/* New styles */
+.download-container-special {
+  display: flex !important;
+  justify-content: center !important;
+  padding: 20px 0 !important;
+  flex-wrap: nowrap !important; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  background-color: rgba(0, 0, 0, 0.7); /* You can adjust this as you prefer */
+  border-radius: 10px;
+  margin-top: -5em; /* This is to make the box overlap with the .background-div */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.download-container-special .download-button {
+  margin: 1em;
+  background-color: #fff;
+  color: #000;
+}
+
+.disabled-button {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.disabled-button:hover::after {
+  content: "Coming soon!";
+  position: absolute;
+  background-color: #444;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+
+
+.pdf-report-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.pdf-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 0 10px;
+  color: inherit;
+}
+
+.pdf-icon {
+  height: 24px;
+  width: 24px;
+  margin-right: 5px;
+}
+
+/* Enhanced download button styles */
+.download-button .download-icon, .download-button span {
+  vertical-align: middle;
+}
+
+.download-button span {
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+
+/* Enhanced installation instructions styles */
+/* Enhanced installation instructions styles */
+.second-div {
+  color: #333;
+  line-height: 1.5;
+}
+
+.second-div h2 {
+  font-size: 2.2em;
+  padding-bottom: 0.2em;
+  margin-top: 1em;
+  border-bottom: 2px solid #333;  /* Adds a line under the heading */
+}
+
+.second-div h3 {
+  font-size: 1.8em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.second-div p, .second-div ul, .second-div ol {
+  font-size: 1.3em;
+  margin-top: 0.5em;
+}
+
+.second-div ul, .second-div ol {
+  margin-left: 2.5em;
+}
+
+.second-div li {
+  margin-top: 0.5em;
+}
+
+.second-div ul li::before {
+  content: "–";  /* Adds a dash before the bullet points */
+  color: #333;
+  margin-left: -1em;
+  margin-right: 0.5em;
+}
+
+.second-div ol {
+  list-style-type: none;  /* Removes the default numbers */
+  counter-reset: item;
+}
+
+.second-div ol li {
+  counter-increment: item;
+  margin-bottom: 0.5em;
+}
+
+.second-div ol li::before {
+  content: counter(item) ". ";  /* Adds a custom numbered list style */
+  color: #333;
+}
+
+/* Enhanced installation instructions styles */
+/* Adding some custom styles */
+.page-body {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+.page-body h1, .page-body h2, .page-body h3 {
+  color: #ffc107;
+}
+
+.page-body a {
+  color: #ffc107;
+  text-decoration: none;
+}
+
+.page-body a:hover {
+  text-decoration: underline;
+}
+
+
+.download-button {
+  background-color: #ffc107;
+  color: #1a1a1a;
+  margin: 0 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #e0a800;
+}
+
+.download-icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.installation-div {
+  background-color: #262626;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.installation-div h2, .installation-div h3 {
+  margin-top: 20px;
+}
+
 /* Background styles */
 .background-div {
   background-image: url(https://media.discordapp.net/attachments/1064936226576142336/1082118058002354186/AVANT_AVANT_AVANT_DERNIER_2.png?width=1609&height=905);
@@ -28,6 +208,25 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   background-color: #fff;
+}
+
+/* Include your existing CSS here... */
+
+.download-container {
+  clear: both;  /* clears float */
+  display: block; /* makes it a block element */
+  width: 100%;  /* takes up the full width */
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+
+.download-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
 }
 
 .titling.inverted-colors {

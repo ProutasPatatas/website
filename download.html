@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Deplorable Odyssey - Download</title>
+	  <link rel="icon" href="./ico.ico">
+</head>
+
+<page-body>
+<nav id="navbar">
+  <ul class="navbar" id="navbar2">
+    <li><a href="./index.html">Menu</a></li>
+    <li><a href="./team.html">Team</a></li>
+    <li><a href="#"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/724/724933.png" alt="Download icon"> Download</a></li>
+    <li><a href="#" id="toggleTheme"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/91/91466.png" alt="Moon icon"></a></li>
+  </ul>
+</nav>
+<div class="background-div">
+  <h1 class="center titling">Download Deplorable Odyssey</h1>
+
+</div>
+
+<div class="pdf-report-container">
+  <a class="download-button" href="path_to_windows_download"><img class="download-icon" src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Windows logo"> <span>Windows</span></a>
+<a class="download-button disabled-button" href="path_to_linux_download"><img class="download-icon" src="https://cdn-icons-png.flaticon.com/512/226/226772.png" alt="Linux logo"> <span>Linux</span></a>
+<a class="download-button disabled-button" href="path_to_mac_download"><img class="download-icon" src="https://cdn-icons-png.flaticon.com/512/2/2235.png" alt="Mac logo"> <span>Mac</span></a>
+</div>
+
+
+<div class="installation-div">
+    <h2 class="center2">Windows Installation</h2>
+    <p>In this part, we will explain how the installation of the game takes place on Windows.</p>
+
+    <h3>1.1 Prerequisite</h3>
+    <p>You need several conditions to be able to play the game Deplorable Odyssey in an enjoyable way.</p>
+    <ul>
+      <li>OS: Windows 10 or higher</li>
+      <li>RAM: 4 GB</li>
+      <li>Free Space: At least 1 GB</li>
+    </ul>
+
+    <h3>1.2 Downloading the game</h3>
+    <p>In this section we will see where the game is, and how to download it.</p>
+    <ol>
+      <li>Go to the project website.</li>
+      <li>Look for the install button at the top of the page.</li>
+      <li>Download and wait for the installation to complete. With a 10mb/s connection, the installation should be done in less than 10 seconds.</li>
+    </ol>
+
+    <h3>1.3 Installing the game</h3>
+    <p>In this section, after downloading the game, we will see how to install the game on the PC.</p>
+    <ol>
+      <li>Find in your download folder the installer named “Deplorable Odyssey 1.0 Setup (x64).exe”.</li>
+      <li>Click on the executable file to launch the installer.</li>
+      <!-- Additional steps omitted for brevity -->
+    </ol>
+
+    <h3>1.4 Starting the game</h3>
+    <p>In this section, following the installation of the game, we will see how to launch the game for the first time.</p>
+    <ol>
+      <li>The installation done, the game will be installed by default at the location C:\Program Files (x86) and if you have not unchecked any option, a shortcut will be visible from your desktop.</li>
+      <li>There are several ways to start the game.</li>
+      <ul>
+        <li>Launch your shortcut on your desktop.</li>
+        <li>Go to the installation folder and click on the application.</li>
+        <li>Go to your windows bar and search the Deplorable Odyssey app.</li>
+      </ul>
+    </ol>
+</div>
+
+<div class="pdf-report-container">
+  <a class="pdf-button" href="./Rapportdesoutenance1.pdf"><img class="pdf-icon" src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF icon"> <span>Report 1</span></a>
+  <a class="Rapport_de_soutenance_2_2.pdf" href="path_to_report2"><img class="pdf-icon" src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF icon"> <span>Report 2</span></a>
+  <a class="Rapport_de_soutenance_Finale.pdf" href="path_to_final_report"><img class="pdf-icon" src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF icon"> <span>Final Report</span></a>
+  <a class="./Operating_File-2-1.pdf" href="path_to_user_manual"><img class="pdf-icon" src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF icon"> <span>User Manual</span></a>
+</div>
+
+<script>
+
+let lastScrollTop = 0;
+
+function updateNavbar() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const navbar = document.getElementById('navbar');
+
+  if (scrollTop > lastScrollTop) {
+    navbar.classList.add('navbar-hidden');
+  } else {
+    navbar.classList.remove('navbar-hidden');
+  }
+  lastScrollTop = scrollTop;
+}
+
+let ticking = false;
+
+function onScroll() {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      updateNavbar();
+      ticking = false;
+    });
+    ticking = true;
+  }
+}
+
+window.addEventListener('scroll', onScroll);
+
+</script>
+
+<script>
+  const toggleThemeBtn = document.getElementById('toggleTheme');
+  const titling = document.querySelector('.titling');
+  const backgroundDiv = document.querySelector('.background-div');
+  const themeIcon = document.querySelector('#toggleTheme img');
+  
+  const navbar = document.getElementById('navbar2');
+  const moonIcon = 'https://cdn-icons-png.flaticon.com/512/91/91466.png';
+  const sunIcon = 'https://www.iconpacks.net/icons/2/free-sun-icon-3337-thumb.png';
+
+
+  toggleThemeBtn.addEventListener('click', () => {
+    titling.classList.toggle('inverted-colors');
+    backgroundDiv.classList.toggle('alternative-bg');
+	    if (themeIcon.src === moonIcon) {
+      themeIcon.src = sunIcon;
+    } else {
+      themeIcon.src = moonIcon;
+    }
+  });
+</script>
+
+<script>
+
+  // Calculate the duration of the first animation
+  const firstAnimationDuration = parseFloat(getComputedStyle(titling).animationDuration) * 1000;
+
+  // Add the 'floating' class after the first animation has finished
+  setTimeout(() => {
+    titling.classList.add('floating');
+  }, firstAnimationDuration);
+</script>
+</body>
+</html>
